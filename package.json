@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "now-dev": "node index.js",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "npm run build && npm run export",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.18",
+    "nodemon": "^1.18.10"
+  }
+}
