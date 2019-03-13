@@ -10,17 +10,16 @@ const helmet = require('helmet');
 
 const app = express();
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'localhost:3000');
-    res.setHeader('Access-Control-Allow_Methods', 'POST, GET, OPTIONS');
-    res.setHeader('Access-Control_Allow-Headers', 'Content-Type, Authorization');
-    if(req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-    next();
-})
-app.use(cors({credentials: true, origin: true, allowedHeaders: ['Content-Type', 'Authorization']}));
-app.options('*', cors());
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'localhost:3000');
+//     res.setHeader('Access-Control-Allow_Methods', 'POST, GET, OPTIONS');
+//     res.setHeader('Access-Control_Allow-Headers', 'Content-Type, Authorization');
+//     if(req.method === 'OPTIONS') {
+//         return res.sendStatus(200);
+//     }
+//     next();
+// })
+app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
