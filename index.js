@@ -52,7 +52,7 @@ app.use('/graphql', graphqlHTTP({
     mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@gothere-kluc7.gcp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`,
  { useNewUrlParser: true })
     .then( () => { 
-		app.listen(4000);
+		app.listen(process.env.PORT || 4000);
 		console.log('Ready');
 		})
     .catch(err => {console.log(err);
